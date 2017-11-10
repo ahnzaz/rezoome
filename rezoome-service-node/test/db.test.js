@@ -68,5 +68,3 @@ describe('Test', function(){
         assert.equal(0, 0);
     });
 });
-
-mongoose.disconnect();
