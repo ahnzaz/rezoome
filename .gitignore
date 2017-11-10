@@ -59,3 +59,5 @@ typings/
 
 # Certificate and Key
 *.pem
+/rezoome-service-node/key/*.ppk
+/rezoome-service-node/key/*.key

@@ -1,4 +1,5 @@
 var http = require('http');
+var fs = require('fs');
 
 const nexledgerServer = {
 
@@ -8,7 +9,9 @@ const nexledgerServer = {
 	
 	headers : {
 		'Content-Type' : 'application/json;charset=utf-8', 
-	}
+	},
+
+	ca : [fs.readFileSync('../../ca/nexledger_node.cer')]
 }
 
 var blockchain = {
