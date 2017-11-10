@@ -20,4 +20,4 @@ var blockchain = {
 	}
 }
 
-module.exports = BlockChain
+module.exports = blockchain
