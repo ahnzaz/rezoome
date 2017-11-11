@@ -8,16 +8,16 @@
  */
 var express = require('express');
 var router = express.Router();
-var userController = require('./controller');
+var ctrl = require('./controller');
 
-router.get('/user',  userController.get);
+router.get('/user',  ctrl.get);
 
-router.get('/user/:userId', userController.get);
+router.get('/user/:id', ctrl.get);
 
-router.put('/user', userController.put);
+router.put('/user', ctrl.put);
 
-router.post('/user/:userId', userController.set);
+router.post('/user/:id', ctrl.set);
 
-router.delete('/user/:userId', userController.del);
+router.delete('/user/:id', ctrl.del);
 
 module.exports = router;
