@@ -1,4 +1,4 @@
-var User = require("../../model/user");
+var User = require("../../../module/db/user_model");
 
 /**
  * Controller of User API. <br />
@@ -25,7 +25,7 @@ exports.get = (req, res, next) => {
 exports.put = (req, res, next) => {
     var userData = req.body;
     if(userData){
-        User newUser = new User(userData);
+        var newUser = new User(userData);
         newUser.save((insertedUser)=>{
             res.send(JSON.stringify(insertedUser));
         })
