@@ -25,9 +25,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
 
-app.use('/api', require('./service/api/route'));
+// API route.
+app.use('/', require('./service/api/route'));
+
+
 
 
 

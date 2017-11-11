@@ -8,9 +8,11 @@
  */
 var express = require('express');
 var router = express.Router();
+
 var ctrl = require('./controller');
 
-router.get('/user',  ctrl.get);
+// router.get('/user',  ctrl.get);
+router.get('/user', ctrl.get);
 
 router.get('/user/:id', ctrl.get);
 

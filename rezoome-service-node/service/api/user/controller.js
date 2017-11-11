@@ -9,6 +9,7 @@ var User = require("../../../module/db/user_model");
  */
  
 exports.get = (req, res, next) => {
+    console.log('USER Controller test');
     var userId = req.params.id;
     
     if(userId){
@@ -18,7 +19,7 @@ exports.get = (req, res, next) => {
             res.send(JSON.stringify(user));
         })
     }else{
-        User.findall
+        res.send("All user");
     }
 }
 		
