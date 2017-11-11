@@ -40,7 +40,7 @@ exports.set = (req, res, next) =>{
         }, (user)=>{
             user = userData;
             user.save((updatedUser)=>{
-                res.send(JSON.stringify(updateUser));
+                res.send(JSON.stringify(updatedUser));
             })
         });
     }
@@ -50,7 +50,7 @@ exports.del = (req, res, next) => {
     var userData = req.body;
     if(userData){
         User.remove({
-            id : userdata.id
+            id : userData.id
         }, (err)=>{
             if(err)
                 console.error(err);
