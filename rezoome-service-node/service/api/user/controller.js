@@ -13,7 +13,7 @@ exports.get = (req, res, next) => {
     var userId = req.params.id;
     
     if(userId){
-        User.findById(userId, (user)=>{
+        User.findById(userId, (err, user)=>{
             res.send(JSON.stringify(user, null, 2));
         })
     }else{
