@@ -19,7 +19,11 @@ exports.get = (req, res, next) => {
             res.send(JSON.stringify(user));
         })
     }else{
-        res.send("All user");
+        User.find({}).exec((err, docs)=>{
+            console.log("All user : ", err);
+            res.send(JSON.stringify(docs));
+        })
+        
     }
 }
 		
