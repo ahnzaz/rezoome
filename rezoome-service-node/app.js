@@ -24,10 +24,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', api);
+app.use('/', index);
 app.use('/users', users);
 
-app.use('/api', require('./service/api/user/route'));
+app.use('/api', require('./service/api/route'));
 
 
 
