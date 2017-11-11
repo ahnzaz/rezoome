@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
  */
 var RecordSchema = new Schema({
     type    : String,
-    data    : String,
+    date    : String,
     grade   : String
 });
 
