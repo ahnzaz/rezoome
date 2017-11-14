@@ -12,28 +12,49 @@
     <div id="root">
         <div id="sign_form">
         </div>
-        <div id="container">
-            <nav id="nav">
-                <div id="meta">
+        <div id="nested">
+                <nav id="nav">
+                    <div id="meta">
 
-                </div>
-                <div id="menu">
+                    </div>
+                </nav>
+                <div id="contents">
+                    <div id="recent">
 
-                </div>
-            </nav>
-            <div id="contents">
-                <div id="recent">
+                    </div>
+                    <div id="profile">
 
-                </div>
-                <div id="profile">
+                    </div>
+                    <div id="records">
+                        <div id="records_add_entry">
 
+                        </div>
+                        <div id="education">
+                            <div>
+                                <h1 className="record_type"> -학력사항</h1>
+                            </div>
+                            <div className="record_entries" id="record_education">
+                            </div>
+                        </div>
+                        <div id="career">
+                            <div>
+                                <h1 className="record_type"> -경력사항</h1>
+                            </div>
+                            <div className="record_entries" id="record_careers">
+                            </div>
+                        </div>
+                        <div id="certificates">
+                            <div>
+                                <h1 className="record_type"> -자격</h1>
+                            </div>
+                            <div className="record_entries" id="record_certs">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div id="records"></div>
+                <footer>
+                </footer>
             </div>
-            <footer>
-                
-            </footer>
-        </div>
     </div>
 </body>
 <script src="./bundle.js"></script>

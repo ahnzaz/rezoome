@@ -1,9 +1,12 @@
 import React from 'react';
 import Avatar from 'material-ui/Avatar';
-import List from 'material-ui/List';
+import { List, ListItem } from 'material-ui/List';
 import RaisedButton from 'material-ui/RaisedButton';
+import Divider from 'material-ui/Divider'
+import ContentInbox from 'material-ui/svg-icons/content/inbox';
+import Paper from 'material-ui/Paper'
 
-const avatar_pic_style = {margin: 5};
+const avatar_pic_style = { margin: 5 };
 
 /**
  * Component for User's Meta Profile view. <br />
@@ -12,25 +15,26 @@ const avatar_pic_style = {margin: 5};
  * @author TACKSU
  * @updated 171113 - created
  */
-const MetaProfile = (props)=>(
-<div>
+const MetaProfile = (props) => (
+<Paper
+    zDepth={2}>
     <div>
-        <Avatar
-            src={props.img}
-            size={30}
-            avatar_pic_style={avatar_pic_style}
-        />
-    </div>
-        <p> {props.name} </p>
-        <p> {props.simple_profile} </p>
-    <div>
+        <div className="meta_profile">
+            <Avatar
+                src={props.img}
+                size={30}
+                avatar_pic_style={avatar_pic_style}
+            />
+            <h1 className="meta_name"> {props.name} </h1>
+            <h1 className="meta_simple"> {props.simple_profile} </h1>
+        </div>
         <List>
-            <ListItem primaryText="최근 경력사항" leftIcon={<ContentInbox />} />
-            <ListItem primaryText="메뉴 1" leftIcon={<ContentInbox />} />
-            <ListItem primaryText="메뉴 2" leftIcon={<ContentInbox />} />
+            <ListItem primaryText="Latest record" leftIcon={<ContentInbox />} />
+            <ListItem primaryText="Menu 01" leftIcon={<ContentInbox />} />
+            <ListItem primaryText="Menu 02" leftIcon={<ContentInbox />} />
             <Divider />
-            <ListItem primaryText="메뉴 3" leftIcon={<ContentInbox />} />
-            <ListItem primaryText="메뉴 4" leftIcon={<ContentInbox />} />
+            <ListItem primaryText="Menu 03" leftIcon={<ContentInbox />} />
+            <ListItem primaryText="Menu 04" leftIcon={<ContentInbox />} />
             <Divider />
         </List>
         <RaisedButton
@@ -38,7 +42,10 @@ const MetaProfile = (props)=>(
             primary={true}
             fullWidth={true}
             height={20}
+            onClick={props.callback}
             />
     </div>
-</div>
+</Paper>
 );
+
+export default MetaProfile;

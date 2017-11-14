@@ -2,9 +2,78 @@ a {
   color: #00B7FF;
 }
 
+#root{
+  margin: 10px;
+  border-color: gray;
+  border-width: 1px;
+  border-style:solid;
+  overflow: auto;
+}
+
 #sign_form {
   margin-top: 20px;
   margin-left : auto;
   margin-right :auto;
   width : 60%;
+}
+
+.meta_profile {
+  padding : 10px;
+  text-align: center;
+}
+
+.meta_name{
+  font-size: 11px;
+}
+
+.meta_simple{
+  font-size: 11px;
+}
+
+#nav {
+  margin: 10px;
+  width : 200px;
+  float : left;
+}
+
+div #contents{
+  float:left;
+}
+
+.nested:after{
+  content : "";
+  display : block;
+  clear:both;
+}
+
+footer {
+  clear : both;
+}
+
+
+
+.record_check {
+  float:left;
+}
+
+.record_content {
+  float:left;
+}
+
+.record_chip {
+  float:left;
+}
+
+h1, h2 {
+  color: gray;
+  font-size : 12px;
+}
+
+.record_entry{
+  overflow:auto;
+}
+
+h1 .record_type {
+  color: gray;
+  font-size : 20px;
 }
