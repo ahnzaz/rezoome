@@ -13,13 +13,14 @@ import $ from 'jquery'
  */
 export default class EduRecords extends React.Component {
 
+    static entryStyle = {
+        display: 'none'
+    }
+
     state = {
-        childs: [{
-            name: "Child1",
-            period: "Child2",
-            location: "Child3",
-            grade: 0.00
-        }]
+        childs: [],
+        indicator: 'loading',
+        indicator_state: 'Import education records from Blockchain'
     }
 
     // 진짜 Child components
@@ -35,23 +36,31 @@ export default class EduRecords extends React.Component {
         this.props = props;
     }
 
-    setChilds = (childs) => {
-        this.state.childs = childs;
-        debugger
-        this.forceUpdate();
-        if (this.state.childs.length > 0)
-            this.showChild(0);
+    setChilds = (_childs) => {
+        this.state.childs = _childs;
+        this.forceUpdate(() => {
+            if (this.state.childs.length > 0)
+                this.showChild(0);
+        });
+
     }
 
     showChild = (idx) => {
-        debugger;
-        if (idx > this.state.childs.length) {
-            this.indicator.status = "read"
-            this.indicator.forceUpdate();
+        if (idx < this.state.childs.length) {
+            $(ReactDOM.findDOMNode(this.childComps[idx])).slideDown({
+                easing: 'swing',
+                duration: 1000,
+                complete: () => {
+                    setTimeout(()=>{
+                        this.showChild(idx + 1);    
+                    },500)
+                }
+            })
         }
         else {
-            $(ReactDOM.findDOMNode(this.childComps[idx])).slideDown(500, () => {
-                this.showChild(idx + 1);
+            this.setState({
+                indicator: 'ready',
+                indicator_state: 'Import complete'
             })
         }
     }
@@ -61,11 +70,12 @@ export default class EduRecords extends React.Component {
             <div>
                 <div>
                     {
-                        this.state.childs.map((item)=>{
-                            <EduRecord 
+                        this.state.childs.map((item, key)=>{
+                            return <EduRecord 
+                                id={key}
+                                key={key}
                                 ref={
                                     (e)=>{
-                                        debugger
                                         this.childComps.push(e);
                                     }
                                 }
@@ -73,9 +83,9 @@ export default class EduRecords extends React.Component {
                                 period={item.period}
                                 location={item.period}
                                 grade={item.grade}
-                                // style={{
-                                //     display : 'none'
-                                // }}
+                                style={{
+                                    display : 'none'
+                                }}
                             />
                         })
                     }
@@ -84,6 +94,9 @@ export default class EduRecords extends React.Component {
                 <div>
                 <RefreshIndicator
                     onClick={(e)=>{
+                        this.setState({
+                            indicator : 'loading'
+                        })
                         this.setChilds([
                             {
                                 name : "한국 과학고등학교",
@@ -99,22 +112,16 @@ export default class EduRecords extends React.Component {
                             }
                         ]);
                     }}
-                    ref={(e)=>{
-                        this.indicator = e;
-                    }}
                     size={30}
                     left={0}
                     top={0}
-                    status="loading"
+                    percentage={80}
+                    status={this.state.indicator}
                     style={{
                             display: 'inline-block',
                             position: 'relative',
                           }}/>
-                    <p ref={
-                        (e)=>{
-                            this.indicator_desc = e;
-                        }
-                    }> "학력사항을 불러오는 중입니다." </p>
+                    <p> {this.state.indicator_state} </p>
                 </div>
             </div>
         );
