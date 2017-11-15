@@ -7,10 +7,7 @@ import RaisedButton from 'material-ui/RaisedButton';
  * @since 1.0.0
  * @author TACKSU
  */
-export default SelectedRecord extends React.Component {
-    state = {
-
-    }
+export default class SelectedRecord extends React.Component {
 
     constructor(props) {
         super();

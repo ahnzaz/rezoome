@@ -8,7 +8,7 @@ import Chip from 'material-ui/Chip'
  * @since 1.0.0
  *
  */
-export default class CertEntry extends React.Component {
+export default class CertRecord extends React.Component {
     
 
     constructor(props) {

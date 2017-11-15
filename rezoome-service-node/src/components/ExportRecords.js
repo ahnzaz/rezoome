@@ -1,9 +1,9 @@
 import React from 'react';
 
-import ReaisedButton from 'material-ui/RaiseButton';
+import RaisedButton from 'material-ui/RaisedButton';
 import Dialog from 'material-ui/Dialog';
 
-export default ExportRecords extends Reat.Component {
+export default class ExportRecords extends React.Component{
     state = {
         open_pdf: false,
         open_url: false
@@ -57,7 +57,7 @@ export default ExportRecords extends Reat.Component {
                 
                 <Dialog title = "Export URL"
                 modal = { false }
-                open = {this.state.openUrl}
+                open = {this.state.open_url}
                 onRequestClose = {this.closeUrl} >
                 </Dialog>
             </div>
