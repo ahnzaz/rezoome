@@ -12,40 +12,46 @@ import $ from 'jquery'
  *
  */
 export default class EduRecords extends React.Component {
-    
+
     state = {
-        childs : []
+        childs: [{
+            name: "Child1",
+            period: "Child2",
+            location: "Child3",
+            grade: 0.00
+        }]
     }
-    
+
     // 진짜 Child components
     childComps = [];
-    
-    addChild = (options)=>{
+
+    addChild = (options) => {
         this.forceUpdate();
     };
-    
+
 
     constructor(props) {
         super();
         this.props = props;
     }
-    
-    setChilds = (childs)=>{
+
+    setChilds = (childs) => {
         this.state.childs = childs;
         debugger
         this.forceUpdate();
-        if(this.state.childs.length > 0)
+        if (this.state.childs.length > 0)
             this.showChild(0);
     }
-    
-    showChild = (idx)=>{
+
+    showChild = (idx) => {
         debugger;
-        if(idx > this.state.childs.length){
-            this.indicator.status="read"
+        if (idx > this.state.childs.length) {
+            this.indicator.status = "read"
             this.indicator.forceUpdate();
-        }else{
-            $(ReactDOM.findDOMNode(this.childComps[idx])).slideDown(500, ()=>{
-                this.showChild(idx+1);
+        }
+        else {
+            $(ReactDOM.findDOMNode(this.childComps[idx])).slideDown(500, () => {
+                this.showChild(idx + 1);
             })
         }
     }

@@ -53647,7 +53647,12 @@ var EduRecords = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (EduRecords.__proto__ || Object.getPrototypeOf(EduRecords)).call(this));
 
         _this.state = {
-            childs: [] };
+            childs: [{
+                name: "Child1",
+                period: "Child2",
+                location: "Child3",
+                grade: 0.00
+            }] };
         _this.childComps = [];
 
         _this.addChild = function (options) {
