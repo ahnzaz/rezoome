@@ -9,7 +9,11 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import AddRecordDialog from './components/AddRecordDialog';
 
+
 import EduRecords from './components/EduRecords';
+import CertRecrods from './components/CertRecords';
+
+import ExportRecords from './components/ExportRecords';
 
 ReactDOM.render(
   <MuiThemeProvider>
@@ -68,6 +72,13 @@ ReactDOM.render(
     document.getElementById('record_education')
 );
 
+ReactDOM.render(
+    <MuiThemeProvider>
+        <CertRecords />
+    </MuiThemeProvider>,
+    document.getElementById('record_certs')
+);
+
 // ReactDOM.render(
 //     <MuiThemeProvider>
 //         <Paper
@@ -92,3 +103,38 @@ ReactDOM.render(
     </MuiThemeProvider>,
     document.getElementById('meta')
 );
+
+ReactDOM.render(
+    <MuiThemeProvider>
+        <ExportRecords />
+    </MuiThemeProvider>,
+    document.getElementById('export_records_menu')
+)
+
+import SelectedRecord from './components/SelectedRecord';
+
+ReactDOM.render(
+    <MuiThemeProvider>
+        {
+            [{
+                type : '학력',
+                name : '한국 과학고등학교 졸업증명서'
+            },
+            {
+                type : '학력',
+                name : '한국대학교 전자공학과 졸업증명서'
+            },
+            {
+                type : '외국어능력',
+                name : '영어 OPIc 성적 증명서'
+            }].map((item)=>{
+                return (
+                    <SelectedRecord
+                    type={item.type}
+                    name={item.name}/>
+                );
+            })
+        }
+    </MuiThemeProvider>,
+    document.getElementById('selected_records')
+)
