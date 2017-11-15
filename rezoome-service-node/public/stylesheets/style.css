@@ -2,12 +2,40 @@ a {
   color: #00B7FF;
 }
 
-#root{
+p {
+  font-size : 8px;
+}
+
+h1 {
+  color: gray;
+  font-size : 12px;
+}
+
+h2, h3 {
+  color: gray;
+  font-size : 8px;
+}
+
+li {
+  font-size : 8px;
+}
+
+
+/*로그인 form div*/
+div #sign_form{
+  width : 568px;
+}
+
+#root {
   margin: 10px;
   border-color: gray;
   border-width: 1px;
   border-style:solid;
   overflow: auto;
+}
+
+#root:after{
+  clear :both;
 }
 
 #sign_form {
@@ -26,13 +54,16 @@ a {
   font-size: 11px;
 }
 
+.record_entry:after {
+  clear:both;
+}
+
 .meta_simple{
   font-size: 11px;
 }
 
 #nav {
-  margin: 10px;
-  width : 200px;
+  width : 307px;
   float : left;
 }
 
@@ -50,23 +81,8 @@ footer {
   clear : both;
 }
 
-
-
-.record_check {
-  float:left;
-}
-
 .record_content {
   float:left;
-}
-
-.record_chip {
-  float:left;
-}
-
-h1, h2 {
-  color: gray;
-  font-size : 12px;
 }
 
 .record_entry{

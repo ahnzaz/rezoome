@@ -15,6 +15,7 @@
     "debug": "~2.6.9",
     "express": "~4.15.5",
     "jquery": "^3.2.1",
+    "jquery-easing": "0.0.1",
     "material-ui": "^0.19.4",
     "mongoose": "^4.13.2",
     "morgan": "~1.9.0",

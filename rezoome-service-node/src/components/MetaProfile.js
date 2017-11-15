@@ -6,7 +6,9 @@ import Divider from 'material-ui/Divider'
 import ContentInbox from 'material-ui/svg-icons/content/inbox';
 import Paper from 'material-ui/Paper'
 
-const avatar_pic_style = { margin: 5 };
+const avatar_pic_style = {
+    
+};
 
 /**
  * Component for User's Meta Profile view. <br />
@@ -22,7 +24,7 @@ const MetaProfile = (props) => (
         <div className="meta_profile">
             <Avatar
                 src={props.img}
-                size={30}
+                size={167}
                 avatar_pic_style={avatar_pic_style}
             />
             <h1 className="meta_name"> {props.name} </h1>

@@ -6,6 +6,7 @@ import AppBar from 'material-ui/AppBar';
 import SignForm from './components/SignForm';
 import MetaProfile from './components/MetaProfile';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import FlatButton from 'material-ui/FlatButton'
 import RaisedButton from 'material-ui/RaisedButton';
 import AddRecordDialog from './components/AddRecordDialog';
 
@@ -22,7 +23,11 @@ ReactDOM.render(
   <MuiThemeProvider>
     <AppBar
       title="Rezoome"
-      iconClassNameRight="muidocs-icon-navigation-expand-more"
+      iconElementRight={
+        <FlatButton label="Service Guide" />,
+        <FlatButton label="My page" />,
+        <RaisedButton label="Log out" />
+      }
     />
   </MuiThemeProvider>,
   document.getElementById('header')

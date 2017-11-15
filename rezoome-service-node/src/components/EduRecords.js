@@ -6,6 +6,9 @@ import RefreshIndicator from 'material-ui/RefreshIndicator';
 import EduRecord from './EduRecord';
 
 import $ from 'jquery'
+import jQuery from 'jquery-easing';
+
+import Paper from 'material-ui/Paper'
 
 /**
  * description
@@ -48,7 +51,7 @@ export default class EduRecords extends React.Component {
     showChild = (idx) => {
         if (idx < this.state.childs.length) {
             $(ReactDOM.findDOMNode(this.childComps[idx])).slideDown({
-                easing: 'swing',
+                easing: 'easeOutExpo',
                 duration: 1000,
                 complete: () => {
                     setTimeout(()=>{
@@ -67,7 +70,8 @@ export default class EduRecords extends React.Component {
 
     render() {
         return (
-            <div>
+            <Paper
+                zDepth={2} >
                 <div>
                     {
                         this.state.childs.map((item, key)=>{
@@ -84,9 +88,10 @@ export default class EduRecords extends React.Component {
                                 location={item.period}
                                 grade={item.grade}
                                 style={{
-                                    display : 'none'
-                                }}
-                            />
+                                    display : 'none',
+                                    width : 950,
+                                    height : 104
+                                }} />
                         })
                     }
                 </div>
@@ -123,7 +128,7 @@ export default class EduRecords extends React.Component {
                           }}/>
                     <p> {this.state.indicator_state} </p>
                 </div>
-            </div>
+            </Paper>
         );
     }
 }
