@@ -26,7 +26,7 @@ import jQuery from 'jquery-easing';
 ReactDOM.render(
   <MuiThemeProvider>
     <AppBar
-      title="Rezoome"
+      title="REZOOME"
       iconElementRight={
         <RaisedButton label="Service Guide" />,
         <RaisedButton label="My page" />,
@@ -203,7 +203,7 @@ ReactDOM.render(
                     <div id="intro">
                         <div id="recent">
                             <div id="recent_img">
-                                <p> 한동근's 최근 업데이트 정보</p>
+                                <h1> 한동근's 최근 업데이트 정보 </h1>
                             </div>
                             <div id='recent_list'>
                                 <ul>
@@ -223,7 +223,7 @@ ReactDOM.render(
                                     padding : '20px',
                                     textAlign : 'center'
                                 }}>
-                                <p> 타임라인 </p>    
+                                <h1> 타임라인 </h1>
                             </div>
                             <div id='timeline_content'
                                 style={{

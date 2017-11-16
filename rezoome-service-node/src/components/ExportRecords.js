@@ -48,13 +48,11 @@ export default class ExportRecords extends React.Component{
                 <RaisedButton
                 style={this.buttonStyle}
                 label="Export to PDF"
-                primary={true}
                 onClick={this.openPDF} />
                 
                 <RaisedButton
                 style={this.buttonStyle}
                 label = "Export to URL"
-                secondary={true}
                 onClick = {this.openUrl} />
                 
                 <Dialog title = "Export PDF"

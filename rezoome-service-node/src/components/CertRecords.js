@@ -2,15 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Checkbox from 'material-ui/Checkbox'
 import Chip from 'material-ui/Chip';
-import RefreshIndicator from 'material-ui/RefreshIndicator';
-import CertRecord from './CertRecord';
+import EduRecord from './EduRecord';
+import CircularProgress from 'material-ui/CircularProgress'
 
 import $ from 'jquery'
+import jQuery from 'jquery-easing';
+
+import Divider from 'material-ui/Divider'
+
+import Done from 'material-ui/svg-icons/'
 
 /**
- * Certs record container component. <br />
- * 
- * @since 1.0.0
+ * description
+ *
  */
 export default class CertRecords extends React.Component {
 
@@ -20,8 +24,8 @@ export default class CertRecords extends React.Component {
 
     state = {
         childs: [],
-        indicator: 'loading',
-        indicator_state: 'Import Certificate records from Blockchain'
+        indicator: 0,
+        indicator_state: 'Import education records from Blockchain'
     }
 
     // 진짜 Child components
@@ -49,7 +53,7 @@ export default class CertRecords extends React.Component {
     showChild = (idx) => {
         if (idx < this.state.childs.length) {
             $(ReactDOM.findDOMNode(this.childComps[idx])).slideDown({
-                easing: 'swing',
+                easing: 'easeOutExpo',
                 duration: 1000,
                 complete: () => {
                     setTimeout(()=>{
@@ -60,7 +64,7 @@ export default class CertRecords extends React.Component {
         }
         else {
             this.setState({
-                indicator: 'ready',
+                indicator : 100,
                 indicator_state: 'Import complete'
             })
         }
@@ -68,14 +72,22 @@ export default class CertRecords extends React.Component {
 
     render() {
         return (
-            <div>
+            <div
+                style={{
+                    padding :'20px',
+                    width : 950
+                }}
+                >
                 <div>
-                    <p> - 외국어 능력 </p>
+                    <p> - 외국어 자격 </p>
+                </div>
+                <div>
+                    <Divider />
                 </div>
                 <div>
                     {
                         this.state.childs.map((item, key)=>{
-                            return <CertRecord 
+                            return (<EduRecord 
                                 id={key}
                                 key={key}
                                 ref={
@@ -88,42 +100,39 @@ export default class CertRecords extends React.Component {
                                 location={item.period}
                                 grade={item.grade}
                                 style={{
-                                    display : 'none'
-                                }}
-                            />
+                                    display : 'none',
+                                    heigth : '104px'
+                                }} />
+                            )
                         })
                     }
                 </div>
                 
                 <div>
-                <RefreshIndicator
+                <CircularProgress
+                    className='cicularProgress'
                     onClick={(e)=>{
-                        this.setState({
-                            indicator : 'loading'
-                        })
                         this.setChilds([
                             {
-                                type : '영어 | OPIc',
-                                grade : 'AL',
-                                date : '2017. 06. 05'
+                                name : "영어 | OPIc AL",
+                                location : "취득일 : 2017. 06. 05.",
+                                grade : "만료일 : 2019. 06. 04."
                             },
                             {
-                                type : '영어 | TOEIC',
-                                grade : '960',
-                                date : '2016. 11. 24'
+                                name : "영어 TOEIC 960",
+                                location : "취득일 : 2017. 05. 01",
+                                grade : "만료일 : 2019. 05. 01"
                             }
                         ]);
                     }}
-                    size={30}
-                    left={0}
-                    top={0}
-                    percentage={80}
-                    status={this.state.indicator}
+                    value={this.state.indicator}
+                    mode ={this.state.indicator == 0 ? 'indeterminate' : 'determinate'}
+                    size={20}
                     style={{
                             display: 'inline-block',
-                            position: 'relative',
+                            margin : '5px'
                           }}/>
-                    <p> {this.state.indicator_state} </p>
+                    <p className='record'> {this.state.indicator_state} </p>
                 </div>
             </div>
         );

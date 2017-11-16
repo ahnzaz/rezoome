@@ -51,7 +51,6 @@ export default class SignForm extends React.Component{
                 <div>
                     <RaisedButton
                         label="Sign In"
-                        primary={true}
                         fullWidth={true}
                         onClick={
                             (e)=>{

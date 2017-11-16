@@ -39,7 +39,6 @@ const MetaProfile = (props) => (
         </List>
         <RaisedButton
             label="Create Report"
-            primary={true}
             fullWidth={true}
             height={20}
             onClick={props.callback}

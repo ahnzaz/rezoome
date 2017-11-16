@@ -40,19 +40,19 @@ class EduRecord extends React.Component {
                     />
                 </div>
                 <div className="record_content" >
-                    <h1 className="record_edu_name"
+                    <h1 className="record"
                         style={{
                             float : 'left'
                         }}>{this.props.name} </h1>
-                    <h2 className="record_edu_period"
+                    <h2 className="record"
                         style={{
                             float : 'left'
                         }}>{this.props.period} </h2>
-                    <h3 className="record_edu_addr"
+                    <h3 className="record"
                         style={{
                             clear : 'left'
                         }}>{this.props.addr} </h3>
-                    <h3 className="record_edu_grade">{this.props.grade} </h3>
+                    <h3 className="record">{this.props.grade} </h3>
                 </div>
                 
                 <div className="record_chip" >

@@ -26,7 +26,7 @@ export default class SelectedRecord extends React.Component {
                     </Chip>
                 </div>
                 <div className='selected_record_name'>
-                    <h1>
+                    <h1 className='record'>
                         {this.props.name}
                     </h1>
                 </div>

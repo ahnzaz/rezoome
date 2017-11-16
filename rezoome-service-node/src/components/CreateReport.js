@@ -15,6 +15,8 @@ import ExportRecords from './ExportRecords';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 
+import Snackbar from 'material-ui/Snackbar';
+
 /**
  * Container for all components to create and export Report. <br />
  * 
@@ -30,6 +32,8 @@ export default class CreateReport extends React.Component {
         super();
         this.props = props;
     }
+    
+    snackbar = null;
 
     getStepContent = (idx) => {
         switch (idx) {
@@ -37,7 +41,7 @@ export default class CreateReport extends React.Component {
                 {
                     return (
                         <div>
-                            <EduRecords />
+                            <EduRecords snackbar={this.snackbar}/>
                             <CertRecords />
                         </div>
                     );
@@ -51,7 +55,7 @@ export default class CreateReport extends React.Component {
                             <div style={{
                                 padding : '20px'
                             }}>
-                                <p> Creation reports is complete. Choose format to export. </p>
+                                <p className='big'> 리포트 생성이 완료되었습니다. 아래의 버튼을 클릭하여 원하는 방식으로 사용해 주세요. </p>
                             </div>
                             <div>
                                 {
@@ -109,7 +113,6 @@ export default class CreateReport extends React.Component {
                 <div id='create_report_navigator'>
                     <RaisedButton
                         label='Next'
-                        primary={true}
                         onClick={()=>{
                                     this.setState({
                                         activeStep : this.state.activeStep+1

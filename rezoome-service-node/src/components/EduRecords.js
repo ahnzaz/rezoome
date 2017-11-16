@@ -10,6 +10,8 @@ import jQuery from 'jquery-easing';
 
 import Divider from 'material-ui/Divider'
 
+import Done from 'material-ui/svg-icons/'
+
 /**
  * description
  *
@@ -22,7 +24,7 @@ export default class EduRecords extends React.Component {
 
     state = {
         childs: [],
-        indicator: 'loading',
+        indicator: 0,
         indicator_state: 'Import education records from Blockchain'
     }
 
@@ -62,7 +64,7 @@ export default class EduRecords extends React.Component {
         }
         else {
             this.setState({
-                indicator: 'ready',
+                indicator : 100,
                 indicator_state: 'Import complete'
             })
         }
@@ -72,12 +74,12 @@ export default class EduRecords extends React.Component {
         return (
             <div
                 style={{
-                    padding :'20px',
+                    padding :'0 20px',
                     width : 950
                 }}
                 >
                 <div>
-                    <p> - 학력 사항 </p>
+                    <p className='small'> - 학력 사항 </p>
                 </div>
                 <div>
                     <Divider />
@@ -110,9 +112,6 @@ export default class EduRecords extends React.Component {
                 <CircularProgress
                     className='cicularProgress'
                     onClick={(e)=>{
-                        this.setState({
-                            indicator : 'loading'
-                        })
                         this.setChilds([
                             {
                                 name : "한국 과학고등학교",
@@ -128,14 +127,14 @@ export default class EduRecords extends React.Component {
                             }
                         ]);
                     }}
-                    size={15}
-                    percentage={80}
+                    value={this.state.indicator}
+                    mode ={this.state.indicator == 0 ? 'indeterminate' : 'determinate'}
+                    size={20}
                     style={{
                             display: 'inline-block',
-                            position: 'relative',
-                            margin : '10px'
+                            margin : '5px'
                           }}/>
-                    <p> {this.state.indicator_state} </p>
+                    <p className='small'> {this.state.indicator_state} </p>
                 </div>
             </div>
         );

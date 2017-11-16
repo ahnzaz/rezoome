@@ -6,6 +6,7 @@ html{
 body{
   margin : 0;
   padding : 0;
+  letter-spacing: -1px;
 }
 
 /*디버깅용 text*/
@@ -20,29 +21,43 @@ body{
 /*  border-collapse: collapse;*/
 /*}*/
 
-a {
-  color: #00B7FF;
+.record {
+  margin :0 5px 0 0
+}
+h1.record {
+  font-size : 20pt;
+  color : #000000;
 }
 
-p {
-  font-size: 18px;
+h2.record {
+  font-size : 20pt;
+  color : #848484;
 }
 
-h1 {
-  color: gray;
-  font-size: 14px;
+h3.record {
+  font-size : 16pt;
+  color : #848484;
 }
 
-h2,
-h3 {
-  color: gray;
-  font-size: 8px;
+h1 .title {
+  color: #848484;
+  font-size: 24pt;
+  letter-spacing: -1px;
 }
 
 li {
-  font-size: 8px;
+  font-size: 12pt;
 }
 
+.big {
+  font-size : 20pt;
+  color : #848484;
+}
+
+.small {
+  font-size : 12pt;
+  color : #848484;
+}
 header {
   display : none;
 }
@@ -99,6 +114,9 @@ div #nested{
   width: 307px;
   float: left;
   margin : 0 20px;
+  border-style: solid;
+  border-width : 0 1px 0 1px;
+  border-color : #848484;
 }
 
 div #contents {
@@ -124,6 +142,9 @@ div #recent_img{
 
 div #recent_list{
   width : 100%;
+
+  
+  
 }
 
 footer {
@@ -137,19 +158,16 @@ div #create_report_stepper{
 
 div #create_report_contents{
   width : auto;
-  padding : 40px;
+  padding : 0 40px;
 }
 
 .record_content {
   float: left;
-  height: 100%;
-  padding : 10px 0px;
 }
 
 .record_entry {
   overflow: hidden;
   position : relative;
-  height: 100%;
 }
 
 .record_check {
@@ -164,8 +182,7 @@ div #create_report_contents{
 
 .record_chip {
   float : right;
-  height: 100%;
-  padding : 20px;
+  padding : 15px;
 }
 
 .chip{
