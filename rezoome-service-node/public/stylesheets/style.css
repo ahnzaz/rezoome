@@ -65,18 +65,18 @@ header {
 /*로그인 form div*/
 
 div #sign_form {
-  width: 568px;
+  width: auto;
+  display : block;
 }
 
 /*전체 컨테이너*/
 #root {
-  width : 568px;
-  margin: 400px auto;
+  width : 626px;
+  margin: 200px auto;
 }
 
 div #nested{
-  width : 548px;
-  height : auto;
+  width : 606px;
 }
 
 #nested:after {

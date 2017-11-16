@@ -25226,9 +25226,7 @@ _reactDom2.default.render(_react2.default.createElement(
             { id: 'nested' },
             _react2.default.createElement(
                 'div',
-                { style: {
-                        padding: 20
-                    } },
+                null,
                 _react2.default.createElement(_SignForm2.default, {
                     callback: function callback() {
                         (0, _jquery2.default)('#root').animate({
@@ -25286,50 +25284,11 @@ _reactDom2.default.render(_react2.default.createElement(
                     _react2.default.createElement(
                         'div',
                         { id: 'recent' },
-                        _react2.default.createElement(
-                            'div',
-                            { id: 'recent_img' },
-                            _react2.default.createElement(
-                                'h1',
-                                null,
-                                ' \uD55C\uB3D9\uADFC\'s \uCD5C\uADFC \uC5C5\uB370\uC774\uD2B8 \uC815\uBCF4 '
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { id: 'recent_list' },
-                            _react2.default.createElement(
-                                'ul',
-                                null,
-                                _react2.default.createElement(
-                                    'li',
-                                    null,
-                                    '2017.09.14 OPIc \uC131\uC801 \uC5C5\uB370\uC774\uD2B8'
-                                ),
-                                _react2.default.createElement(
-                                    'li',
-                                    null,
-                                    '2017.08.14 \uD55C\uAD6D\uB300\uD559\uAD50 4\uD559\uB144 1\uD559\uAE30 \uC131\uC801 \uC5C5\uB370\uC774\uD2B8'
-                                )
-                            )
-                        )
+                        _react2.default.createElement('img', { src: './img/update_info.png' })
                     ),
                     _react2.default.createElement(
                         'div',
                         { id: 'timeline' },
-                        _react2.default.createElement(
-                            'div',
-                            { id: 'timeline_header',
-                                style: {
-                                    padding: '20px',
-                                    textAlign: 'center'
-                                } },
-                            _react2.default.createElement(
-                                'h1',
-                                null,
-                                ' \uD0C0\uC784\uB77C\uC778 '
-                            )
-                        ),
                         _react2.default.createElement(
                             'div',
                             { id: 'timeline_content',
@@ -25359,7 +25318,10 @@ _reactDom2.default.render(_react2.default.createElement(
                             _react2.default.createElement('img', { ref: function ref(e) {
                                     timeline_img = e;
                                 },
-                                src: './img/' })
+                                style: {
+                                    display: 'none'
+                                },
+                                src: './img/timeline_img.png' })
                         )
                     )
                 ),
@@ -46349,7 +46311,14 @@ var SignForm = function (_React$Component) {
 
             return _react2.default.createElement(
                 'div',
-                null,
+                { style: {
+                        padding: '20px'
+                    } },
+                _react2.default.createElement(
+                    'div',
+                    null,
+                    _react2.default.createElement('img', { src: './img/title.png' })
+                ),
                 _react2.default.createElement(
                     'div',
                     null,
@@ -50658,25 +50627,7 @@ var MetaProfile = function MetaProfile(props) {
         _react2.default.createElement(
             'div',
             { className: 'meta_profile' },
-            _react2.default.createElement(_Avatar2.default, {
-                src: props.img,
-                size: 167,
-                avatar_pic_style: avatar_pic_style
-            }),
-            _react2.default.createElement(
-                'h1',
-                { className: 'meta_name' },
-                ' ',
-                props.name,
-                ' '
-            ),
-            _react2.default.createElement(
-                'h1',
-                { className: 'meta_simple' },
-                ' ',
-                props.simple_profile,
-                ' '
-            )
+            _react2.default.createElement('img', { src: './img/userinfo.png' })
         ),
         _react2.default.createElement(
             _List.List,
@@ -96858,7 +96809,12 @@ var CreateReport = function (_React$Component) {
                                 _react2.default.createElement(
                                     'p',
                                     { className: 'big' },
-                                    ' \uB9AC\uD3EC\uD2B8 \uC0DD\uC131\uC774 \uC644\uB8CC\uB418\uC5C8\uC2B5\uB2C8\uB2E4. \uC544\uB798\uC758 \uBC84\uD2BC\uC744 \uD074\uB9AD\uD558\uC5EC \uC6D0\uD558\uB294 \uBC29\uC2DD\uC73C\uB85C \uC0AC\uC6A9\uD574 \uC8FC\uC138\uC694. '
+                                    ' \uB9AC\uD3EC\uD2B8 \uC0DD\uC131\uC774 \uC644\uB8CC\uB418\uC5C8\uC2B5\uB2C8\uB2E4.'
+                                ),
+                                _react2.default.createElement(
+                                    'p',
+                                    { className: 'big' },
+                                    ' \uC544\uB798\uC758 \uBC84\uD2BC\uC744 \uD074\uB9AD\uD558\uC5EC \uC6D0\uD558\uB294 \uBC29\uC2DD\uC73C\uB85C \uC0AC\uC6A9\uD574 \uC8FC\uC138\uC694. '
                                 )
                             ),
                             _react2.default.createElement(

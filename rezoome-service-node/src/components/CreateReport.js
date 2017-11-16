@@ -55,7 +55,8 @@ export default class CreateReport extends React.Component {
                             <div style={{
                                 padding : '20px'
                             }}>
-                                <p className='big'> 리포트 생성이 완료되었습니다. 아래의 버튼을 클릭하여 원하는 방식으로 사용해 주세요. </p>
+                                <p className='big'> 리포트 생성이 완료되었습니다.</p>
+                                <p className='big'> 아래의 버튼을 클릭하여 원하는 방식으로 사용해 주세요. </p>
                             </div>
                             <div>
                                 {

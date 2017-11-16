@@ -20,13 +20,7 @@ const avatar_pic_style = {
 const MetaProfile = (props) => (
     <div>
         <div className="meta_profile">
-            <Avatar
-                src={props.img}
-                size={167}
-                avatar_pic_style={avatar_pic_style}
-            />
-            <h1 className="meta_name"> {props.name} </h1>
-            <h1 className="meta_simple"> {props.simple_profile} </h1>
+            <img src='./img/userinfo.png'/>
         </div>
         <List>
             <ListItem primaryText="Latest record" leftIcon={<ContentInbox />} />

@@ -146,9 +146,7 @@ ReactDOM.render(
             }}
             zDepth={3}>
             <div id='nested'>
-                <div style={{
-                    padding : 20
-                }}>
+                <div>
                     <SignForm
                         callback= {
                             () => {
@@ -202,29 +200,10 @@ ReactDOM.render(
                 <div id='contents'>
                     <div id="intro">
                         <div id="recent">
-                            <div id="recent_img">
-                                <h1> 한동근's 최근 업데이트 정보 </h1>
-                            </div>
-                            <div id='recent_list'>
-                                <ul>
-                                    <li>
-                                        2017.09.14 OPIc 성적 업데이트
-                                    </li>
-                                    <li>
-                                        2017.08.14 한국대학교 4학년 1학기 성적 업데이트
-                                    </li>
-                                </ul>
-                            </div>
+                            <img src='./img/update_info.png'/>
                         </div>
         
                         <div id="timeline">
-                            <div id='timeline_header'
-                                style={{
-                                    padding : '20px',
-                                    textAlign : 'center'
-                                }}>
-                                <h1> 타임라인 </h1>
-                            </div>
                             <div id='timeline_content'
                                 style={{
                                 padding : '30px',
@@ -250,7 +229,10 @@ ReactDOM.render(
                                 <img ref={(e)=>{
                                     timeline_img = e
                                 }}
-                                src='./img/'/>
+                                style={{
+                                    display : 'none'
+                                }}
+                                src='./img/timeline_img.png'/>
                             </div>
                         </div>
                     </div>

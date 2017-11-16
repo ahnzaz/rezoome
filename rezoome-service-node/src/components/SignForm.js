@@ -32,7 +32,12 @@ export default class SignForm extends React.Component{
     
     render(){
         return(
-            <div>
+            <div style={{
+                padding : '20px'
+            }}>
+                <div>
+                    <img src='./img/title.png'/>
+                </div>
                 <div>
                     <TextField
                         hintText="id@example.com"
