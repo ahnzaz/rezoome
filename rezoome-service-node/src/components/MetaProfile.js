@@ -18,8 +18,6 @@ const avatar_pic_style = {
  * @updated 171113 - created
  */
 const MetaProfile = (props) => (
-<Paper
-    zDepth={2}>
     <div>
         <div className="meta_profile">
             <Avatar
@@ -47,7 +45,6 @@ const MetaProfile = (props) => (
             onClick={props.callback}
             />
     </div>
-</Paper>
 );
 
 export default MetaProfile;

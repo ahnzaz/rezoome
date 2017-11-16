@@ -17,7 +17,11 @@ import CertRecrods from './components/CertRecords';
 import ExportRecords from './components/ExportRecords';
 import CreateReport from './components/CreateReport';
 
+import CircularProgress from 'material-ui/CircularProgress';
+
+
 import $ from 'jquery';
+import jQuery from 'jquery-easing';
 
 ReactDOM.render(
   <MuiThemeProvider>
@@ -40,14 +44,6 @@ ReactDOM.render(
 //     </MuiThemeProvider>,
 //     document.getElementById('root')
 // );
-
-
-ReactDOM.render(
-  <MuiThemeProvider>
-    <SignForm />
-  </MuiThemeProvider>,
-  document.getElementById('sign_form')
-);
 
 var eduRecordComp = null;
 
@@ -104,40 +100,166 @@ var eduRecordComp = null;
 //     document.getElementById("records_add_entry")
 // );
 
+const defaultEasing = 'easeOutExpo';
+const defaultDuration = 1000;
+
 const changeToCreate = ()=>{
-    $('#intro').slideUp({
-        duration: 500,
-        easing: 'linear',
+    $('#intro').fadeOut({
+        duration: defaultDuration,
+        easing: defaultEasing,
         complete : ()=>{
             setTimeout(()=>{
-                $(ReactDOM.findDOMNode(createContainer)).slideDown(500);
+                $('#create_report_container').fadeIn({
+                    duration : defaultDuration,
+                    easing : defaultEasing
+                });
             }, 500)
         }
     })
 }
-ReactDOM.render(
-    <MuiThemeProvider>
-        <MetaProfile
-            name="한동근"
-            simple_profile="Hi! 동근!"
-            img="https://www.w3schools.com/w3css/img_avatar2.png"
-            callback={
-                changeToCreate
-            }
-            />
-    </MuiThemeProvider>,
-    document.getElementById('meta')
-);
+// ReactDOM.render(
+//     <MuiThemeProvider>
+//         <MetaProfile
+//             name="한동근"
+//             simple_profile="Hi! 동근!"
+//             img="https://www.w3schools.com/w3css/img_avatar2.png"
+//             callback={
+//                 changeToCreate
+//             }
+//             />
+//     </MuiThemeProvider>,
+//     document.getElementById('meta')
+// );
 
 var createContainer = null;
+
+// Timeline loading progress
+var timelineLoading = null;
+var timeline_img = null;
+
 ReactDOM.render(
     <MuiThemeProvider>
-        <CreateReport
-            ref={(e)=>{
-                createContainer = e}}
+        <Paper
             style={{
-                    display : 'none'
-                }}/>
+                width : 'auto',
+                margin : '10px'
+            }}
+            zDepth={3}>
+            <div id='nested'>
+                <div style={{
+                    padding : 20
+                }}>
+                    <SignForm
+                        callback= {
+                            () => {
+                                $('#root').animate({
+                                    width: '100%',
+                                    height: '850px',
+                                    margin : 0
+                                }, {
+                                    duration: defaultDuration,
+                                    easing: defaultEasing,
+                                })
+                        
+                                $('#nested').animate({
+                                    width: '100%',
+                                    height: '850px',
+                                }, {
+                                    duration: defaultDuration,
+                                    easing: defaultEasing,
+                                    complete: () => {
+                        
+                                        $('#header').slideDown({
+                                            duration: defaultDuration,
+                                            easing: defaultEasing,
+                                            complete: () => {
+                                                $('#nav').fadeIn({
+                                                    duration: 1000,
+                                                    easing: defaultEasing
+                                                });
+                                                $('#contents').fadeIn({
+                                                    duration: 1000,
+                                                    easing: defaultEasing
+                                                });
+                                            }
+                                        })
+                                    }
+                                })
+                            }
+                        }
+                        />
+                </div>
+                <nav id="nav">
+                    <MetaProfile
+                        name="한동근"
+                        simple_profile="Hi! 동근!"
+                        img="https://www.w3schools.com/w3css/img_avatar2.png"
+                        callback={
+                            changeToCreate
+                        }
+                    />
+                </nav>
+                <div id='contents'>
+                    <div id="intro">
+                        <div id="recent">
+                            <div id="recent_img">
+                                <p> 한동근's 최근 업데이트 정보</p>
+                            </div>
+                            <div id='recent_list'>
+                                <ul>
+                                    <li>
+                                        2017.09.14 OPIc 성적 업데이트
+                                    </li>
+                                    <li>
+                                        2017.08.14 한국대학교 4학년 1학기 성적 업데이트
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+        
+                        <div id="timeline">
+                            <div id='timeline_header'
+                                style={{
+                                    padding : '20px',
+                                    textAlign : 'center'
+                                }}>
+                                <p> 타임라인 </p>    
+                            </div>
+                            <div id='timeline_content'
+                                style={{
+                                padding : '30px',
+                                textAlign : 'center'
+                            }}>
+                                <CircularProgress size={300}
+                                    ref={(e)=>timelineLoading = e}
+                                    style={{
+                                        maring : '0 auto'
+                                    }}
+                                    onClick={()=>{
+                                        $(ReactDOM.findDOMNode(timelineLoading)).fadeOut({
+                                            duration : 1000,
+                                            easing : defaultEasing,
+                                            complete : ()=>{
+                                                $(ReactDOM.findDOMNode(timeline_img)).fadeIn({
+                                                    duration : 1000,
+                                                    easing : defaultEasing
+                                                })
+                                            }
+                                        })
+                                    }} />
+                                <img ref={(e)=>{
+                                    timeline_img = e
+                                }}
+                                src='./img/'/>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="create_report_container">
+                        <CreateReport />
+                    </div>
+                </div>
+            </div>
+        </Paper>
     </MuiThemeProvider>,
-    document.getElementById('create_report_container')
+    document.getElementById('root')
 );

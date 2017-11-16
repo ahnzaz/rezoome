@@ -8,7 +8,7 @@ import CircularProgress from 'material-ui/CircularProgress'
 import $ from 'jquery'
 import jQuery from 'jquery-easing';
 
-import Paper from 'material-ui/Paper'
+import Divider from 'material-ui/Divider'
 
 /**
  * description
@@ -70,14 +70,17 @@ export default class EduRecords extends React.Component {
 
     render() {
         return (
-            <Paper
+            <div
                 style={{
                     padding :'20px',
                     width : 950
                 }}
-                zDepth={2} >
+                >
                 <div>
                     <p> - 학력 사항 </p>
+                </div>
+                <div>
+                    <Divider />
                 </div>
                 <div>
                     {
@@ -130,10 +133,11 @@ export default class EduRecords extends React.Component {
                     style={{
                             display: 'inline-block',
                             position: 'relative',
+                            margin : '10px'
                           }}/>
                     <p> {this.state.indicator_state} </p>
                 </div>
-            </Paper>
+            </div>
         );
     }
 }

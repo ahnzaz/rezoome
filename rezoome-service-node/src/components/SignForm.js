@@ -9,7 +9,6 @@ import {
 } from 'material-ui/Table';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
-import Paper from 'material-ui/Paper'
 
 import $ from 'jquery';
 
@@ -33,9 +32,7 @@ export default class SignForm extends React.Component{
     
     render(){
         return(
-            <Paper
-                style={paper_style}
-                zDepth={2} >
+            <div>
                 <div>
                     <TextField
                         hintText="id@example.com"
@@ -68,7 +65,7 @@ export default class SignForm extends React.Component{
                         }
                         />
                 </div>
-            </Paper>
+            </div>
         );
     }
 }

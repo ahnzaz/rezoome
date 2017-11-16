@@ -109,11 +109,12 @@ export default class CreateReport extends React.Component {
                 <div id='create_report_navigator'>
                     <RaisedButton
                         label='Next'
+                        primary={true}
                         onClick={()=>{
                                     this.setState({
                                         activeStep : this.state.activeStep+1
                                     })
-                        }} />
+                    }} />
                 </div>
             </div>
         );

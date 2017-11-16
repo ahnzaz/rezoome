@@ -9,27 +9,28 @@ body{
 }
 
 /*디버깅용 text*/
-div:before {
-  content: attr(id);
-}
+/*div:before {*/
+/*  display: block;*/
+/*  content: attr(id);*/
+/*}*/
 
-div {
-  border-style : solid;
-  border-width : 1px;
-  border-collapse: collapse;
-}
+/*div {*/
+/*  border-style : solid;*/
+/*  border-width : 1px;*/
+/*  border-collapse: collapse;*/
+/*}*/
 
 a {
   color: #00B7FF;
 }
 
 p {
-  font-size: 8px;
+  font-size: 18px;
 }
 
 h1 {
   color: gray;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 h2,
@@ -42,6 +43,9 @@ li {
   font-size: 8px;
 }
 
+header {
+  display : none;
+}
 
 /*로그인 form div*/
 
@@ -51,15 +55,18 @@ div #sign_form {
 
 /*전체 컨테이너*/
 #root {
-  width : 100%;
-  margin: 10px;
-  border-color: gray;
-  border-width: 1px;
-  border-style: solid;
-  overflow: auto;
+  width : 568px;
+  margin: 400px auto;
 }
 
-#root:after {
+div #nested{
+  width : 548px;
+  height : auto;
+}
+
+#nested:after {
+  content : '';
+  display : block;
   clear: both;
 }
 
@@ -88,11 +95,14 @@ div #sign_form {
 }
 
 #nav {
+  display :none;
   width: 307px;
   float: left;
+  margin : 0 20px;
 }
 
 div #contents {
+  display : none;
   float: left;
   width : 1018px;
   margin: 0 38px 63px 30px;
@@ -163,11 +173,6 @@ div #create_report_contents{
   margin : 10px;
 }
 
-h1 .record_type {
-  color: gray;
-  font-size: 20px;
-}
-
 .cicularProgress {
   float : left;
 }
@@ -207,4 +212,8 @@ div #create_report_navigator {
   clear :both;
   text-align : center;
   padding : 30px;
+}
+
+div #create_report_container{
+  display: none;
 }

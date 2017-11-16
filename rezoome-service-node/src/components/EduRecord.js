@@ -30,7 +30,10 @@ class EduRecord extends React.Component {
         return (
             <div className="record_entry record_edu"
                 style={this.props.style}>
-                <div className="record_check record_edu" >
+                <div className="record_check record_edu"
+                    style={{
+                        margin : '20px'
+                    }}>
                     <Checkbox 
                         // checked={this.state.checked}
                         // onCheck={this.toggleCheck.bind(this)}
