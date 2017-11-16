@@ -24,8 +24,8 @@ ReactDOM.render(
     <AppBar
       title="Rezoome"
       iconElementRight={
-        <FlatButton label="Service Guide" />,
-        <FlatButton label="My page" />,
+        <RaisedButton label="Service Guide" />,
+        <RaisedButton label="My page" />,
         <RaisedButton label="Log out" />
       }
     />

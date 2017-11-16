@@ -1,6 +1,7 @@
 import React from 'react';
 import Checkbox from 'material-ui/Checkbox'
 import Chip from 'material-ui/Chip'
+import Divider from 'material-ui/Divider';
 
 /**
  * description
@@ -29,19 +30,13 @@ class EduRecord extends React.Component {
         return (
             <div className="record_entry record_edu"
                 style={this.props.style}>
-                <div className="record_check record_edu"
-                    style={{
-                        float : 'left'
-                    }}>
+                <div className="record_check record_edu" >
                     <Checkbox 
                         // checked={this.state.checked}
                         // onCheck={this.toggleCheck.bind(this)}
                     />
                 </div>
-                <div className="record_edu_content"
-                    style={{
-                        float : 'left'
-                    }}>
+                <div className="record_content" >
                     <h1 className="record_edu_name"
                         style={{
                             float : 'left'
@@ -54,27 +49,27 @@ class EduRecord extends React.Component {
                         style={{
                             clear : 'left'
                         }}>{this.props.addr} </h3>
-                    <h4 className="record_edu_grade">{this.props.grade} </h4>
+                    <h3 className="record_edu_grade">{this.props.grade} </h3>
                 </div>
-                <div className="record_chip"
-                        style={{
-                            float : 'right'
-                        }}>
+                
+                <div className="record_chip" >
                     <Chip
-                        className="chip1"
-                        style={{
-                            float : 'right'
-                        }}>
-                      Button 01
-                    </Chip>
-                    
-                    <Chip
-                        className="chip2"
-                        style={{
-                            float : 'right'
-                        }}>
+                        className="chip" >
                       Button 02
                     </Chip>
+                </div>
+                
+                <div className="record_chip" >
+                    <Chip
+                        className="chip" >
+                      Button 01
+                    </Chip>
+                </div>
+                
+                <div style={{
+                    clear : 'both'
+                }}>
+                    <Divider />
                 </div>
             </div>
         );

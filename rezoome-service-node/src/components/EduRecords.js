@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Checkbox from 'material-ui/Checkbox'
 import Chip from 'material-ui/Chip';
-import RefreshIndicator from 'material-ui/RefreshIndicator';
 import EduRecord from './EduRecord';
+import CircularProgress from 'material-ui/CircularProgress'
 
 import $ from 'jquery'
 import jQuery from 'jquery-easing';
@@ -71,11 +71,18 @@ export default class EduRecords extends React.Component {
     render() {
         return (
             <Paper
+                style={{
+                    padding :'20px',
+                    width : 950
+                }}
                 zDepth={2} >
+                <div>
+                    <p> - 학력 사항 </p>
+                </div>
                 <div>
                     {
                         this.state.childs.map((item, key)=>{
-                            return <EduRecord 
+                            return (<EduRecord 
                                 id={key}
                                 key={key}
                                 ref={
@@ -89,15 +96,16 @@ export default class EduRecords extends React.Component {
                                 grade={item.grade}
                                 style={{
                                     display : 'none',
-                                    width : 950,
-                                    height : 104
+                                    heigth : '104px'
                                 }} />
+                            )
                         })
                     }
                 </div>
                 
                 <div>
-                <RefreshIndicator
+                <CircularProgress
+                    className='cicularProgress'
                     onClick={(e)=>{
                         this.setState({
                             indicator : 'loading'
@@ -117,11 +125,8 @@ export default class EduRecords extends React.Component {
                             }
                         ]);
                     }}
-                    size={30}
-                    left={0}
-                    top={0}
+                    size={15}
                     percentage={80}
-                    status={this.state.indicator}
                     style={{
                             display: 'inline-block',
                             position: 'relative',

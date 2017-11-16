@@ -1,5 +1,6 @@
 import React from 'react'
 import RaisedButton from 'material-ui/RaisedButton';
+import Chip from 'material-ui/Chip'
 
 /**
  * Component for Selected records to export. <br />
@@ -16,14 +17,16 @@ export default class SelectedRecord extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className='selected_record'>
                 <div className='selected_record_type'>
-                    <p className='selected_record_type'>
-                        {this.props.type}
-                    </p>
+                    <Chip style={{
+                        margin : '4px'
+                    }}>
+                    {this.props.type}
+                    </Chip>
                 </div>
                 <div className='selected_record_name'>
-                    <p className='selected_record_name'>
+                    <p>
                         {this.props.name}
                     </p>
                 </div>

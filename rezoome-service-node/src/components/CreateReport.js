@@ -37,13 +37,8 @@ export default class CreateReport extends React.Component {
                 {
                     return (
                         <div>
-                            <div><p>- 학력사항</p></div>
-                            <div>
-                                <EduRecords />
-                            </div>
-                            <div><p>- 외국어 능력</p></div>
-                                <CertRecords />
-                            <div></div>
+                            <EduRecords />
+                            <CertRecords />
                         </div>
                     );
 
@@ -53,7 +48,9 @@ export default class CreateReport extends React.Component {
                 {
                     return (
                         <div>
-                            <div>
+                            <div style={{
+                                padding : '20px'
+                            }}>
                                 <p> Creation reports is complete. Choose format to export. </p>
                             </div>
                             <div>
@@ -104,7 +101,7 @@ export default class CreateReport extends React.Component {
                         </Step>
                     </Stepper>
                 </div>
-                <div id='create_report_container'>
+                <div id='create_report_contents'>
                 {
                     this.getStepContent(this.state.activeStep)
                 }

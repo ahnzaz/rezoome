@@ -1,95 +1,210 @@
+html{
+  margin : 0;
+  padding : 0;
+}
+
+body{
+  margin : 0;
+  padding : 0;
+}
+
+/*디버깅용 text*/
+div:before {
+  content: attr(id);
+}
+
+div {
+  border-style : solid;
+  border-width : 1px;
+  border-collapse: collapse;
+}
+
 a {
   color: #00B7FF;
 }
 
 p {
-  font-size : 8px;
+  font-size: 8px;
 }
 
 h1 {
   color: gray;
-  font-size : 12px;
+  font-size: 12px;
 }
 
-h2, h3 {
+h2,
+h3 {
   color: gray;
-  font-size : 8px;
+  font-size: 8px;
 }
 
 li {
-  font-size : 8px;
+  font-size: 8px;
 }
 
 
 /*로그인 form div*/
-div #sign_form{
-  width : 568px;
+
+div #sign_form {
+  width: 568px;
 }
 
+/*전체 컨테이너*/
 #root {
+  width : 100%;
   margin: 10px;
   border-color: gray;
   border-width: 1px;
-  border-style:solid;
+  border-style: solid;
   overflow: auto;
 }
 
-#root:after{
-  clear :both;
+#root:after {
+  clear: both;
 }
 
 #sign_form {
   margin-top: 20px;
-  margin-left : auto;
-  margin-right :auto;
-  width : 60%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
 }
 
 .meta_profile {
-  padding : 10px;
+  padding: 10px;
   text-align: center;
 }
 
-.meta_name{
+.meta_name {
   font-size: 11px;
 }
 
 .record_entry:after {
-  clear:both;
+  clear: both;
 }
 
-.meta_simple{
+.meta_simple {
   font-size: 11px;
 }
 
 #nav {
-  width : 307px;
-  float : left;
+  width: 307px;
+  float: left;
 }
 
-div #contents{
-  float:left;
+div #contents {
+  float: left;
+  width : 1018px;
+  margin: 0 38px 63px 30px;
+  padding : 10px;
 }
 
-.nested:after{
-  content : "";
-  display : block;
-  clear:both;
+div #recent{
+  margin : 20px;
+}
+
+div #timeline{
+  margin : 20px;
+}
+
+div #recent_img{
+  width : 100%;
+  text-align: center;
+}
+
+div #recent_list{
+  width : 100%;
 }
 
 footer {
-  clear : both;
+  clear: both;
+}
+
+div #create_report_stepper{
+  width : auto;
+  margin : 0px 200px;
+}
+
+div #create_report_contents{
+  width : auto;
+  padding : 40px;
 }
 
 .record_content {
-  float:left;
+  float: left;
+  height: 100%;
+  padding : 10px 0px;
 }
 
-.record_entry{
-  overflow:auto;
+.record_entry {
+  overflow: hidden;
+  position : relative;
+  height: 100%;
+}
+
+.record_check {
+  float : left;
+  margin : auto 10px;
+}
+
+.record_entry:after{
+  content :'';
+  clear : both;
+}
+
+.record_chip {
+  float : right;
+  height: 100%;
+  padding : 20px;
+}
+
+.chip{
+  float : right;
+  margin : 10px;
 }
 
 h1 .record_type {
   color: gray;
-  font-size : 20px;
+  font-size: 20px;
+}
+
+.cicularProgress {
+  float : left;
+}
+
+.selected_record{
+  float : none;
+}
+.selected_record:after {
+  content:'';
+  display :block;
+  clear : both;
+}
+
+div .selected_record_type{
+  float : left;
+}
+
+div .selected_record_name{
+  float: left;
+}
+
+div .export_records{
+  text-align: center
+}
+
+div .selected_record_type{
+  width : 100px;
+  padding : 10px;
+  text-align: right;
+}
+
+div .selected_record_name{
+  padding : 10px;
+}
+
+div #create_report_navigator {
+  clear :both;
+  text-align : center;
+  padding : 30px;
 }

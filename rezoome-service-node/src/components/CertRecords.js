@@ -70,6 +70,9 @@ export default class CertRecords extends React.Component {
         return (
             <div>
                 <div>
+                    <p> - 외국어 능력 </p>
+                </div>
+                <div>
                     {
                         this.state.childs.map((item, key)=>{
                             return <CertRecord 

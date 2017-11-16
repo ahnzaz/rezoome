@@ -8,6 +8,10 @@ export default class ExportRecords extends React.Component{
         open_pdf: false,
         open_url: false
     }
+    
+    buttonStyle = {
+        margin : '40px'
+    }
 
     constructor(props) {
         super();
@@ -40,12 +44,14 @@ export default class ExportRecords extends React.Component{
 
     render() {
         return (
-            <div>
+            <div className='export_records'>
                 <RaisedButton
+                style={this.buttonStyle}
                 label="Export to PDF"
                 onClick={this.openPDF} />
                 
                 <RaisedButton
+                style={this.buttonStyle}
                 label = "Export to URL"
                 onClick = {this.openUrl} />
                 
